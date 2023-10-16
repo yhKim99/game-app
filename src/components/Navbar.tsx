@@ -8,7 +8,6 @@ const Navbar = () => {
       <Image boxSize="70px" src={logo} alt="logo" />
       <ColorSwitch></ColorSwitch>
     </HStack>
-    // test
   );
 };
 
