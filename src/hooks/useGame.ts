@@ -1,6 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import appClients from '../services/app-clients';
 import { CanceledError } from 'axios';
+
+
+export interface Platform {
+    id: number;
+    name: string;
+    slug: string;
+}
 
 
 export interface Game {
@@ -8,6 +15,8 @@ export interface Game {
     name: string;
     rating: number;
     background_image: string;
+    parent_platforms: {platform : Platform}[];
+    metacritic: number;
   }
   
   interface FetchGameResponse {
