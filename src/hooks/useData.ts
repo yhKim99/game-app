@@ -16,7 +16,7 @@ const useData = <T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
 
     const controller = new AbortController();
 
-        setLoading(true);
+      setLoading(true);
       appClients
         .get<FetchResponse<T>>(endpoint, {signal: controller.signal, ...requestConfig})
         .then((res) => {
