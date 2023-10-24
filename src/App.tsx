@@ -1,4 +1,4 @@
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Heading, Show } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import GameGrid from "./components/GameGrid";
 import GenresList from "./components/GenresList";
@@ -45,6 +45,9 @@ const App = () => {
       </GridItem>
       <Show above="lg">
         <GridItem area={"aside"}>
+          <Heading marginX={5} marginBottom={5} as="h5" size="lg">
+            Genres
+          </Heading>
           <GenresList
             selectedGenre={gameQuery.genre}
             onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
