@@ -7,6 +7,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
 import SortSelector from "./components/SortSelector";
+import HeadingMain from "./components/HeadingMain";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -17,6 +18,13 @@ export interface GameQuery {
 
 const App = () => {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+
+  const genreName = gameQuery.genre?.name || "";
+  const platformName = gameQuery.platform?.name || "";
+  const defaultGame =
+    genreName === "" && platformName === ""
+      ? "Games"
+      : `${genreName} ${platformName}`;
 
   return (
     <Grid
@@ -44,6 +52,7 @@ const App = () => {
         </GridItem>
       </Show>
       <GridItem area={"main"}>
+        <HeadingMain heading={defaultGame}></HeadingMain>
         <HStack>
           <PlatformSelector
             onSelectedPlatform={(platform) =>
