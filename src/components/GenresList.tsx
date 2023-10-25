@@ -21,7 +21,7 @@ const GenresList = ({ selectedGenre, onSelectGenre }: Prop) => {
   return (
     <>
       {errors && <Text>{errors}</Text>}
-      {loading && <Spinner marginLeft="5"></Spinner>}
+      {loading && <Spinner></Spinner>}
       <List>
         {data.map((genre) => (
           <ListItem marginBottom="3" key={genre.id}>
